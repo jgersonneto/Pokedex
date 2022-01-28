@@ -1,0 +1,573 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:local="using:PokeDex.viewmodels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:PokeDex.models" 
+    x:Class="PokeDex.view.ViewCadastro"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <local:ViewCadastoViewModels/>
+    </Page.DataContext>
+
+
+    <Grid Background="DarkRed">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" 
+                    Background="LightGray"  
+                    VerticalAlignment="Top" 
+                    Margin="10,20,10,0" 
+                    Height="86"
+                    CornerRadius="10"
+        >
+            <Image Source="/Assets/Logo1/Logo.png" 
+                   Stretch="Fill" 
+                   Height="86" 
+                   Width="180" 
+                   HorizontalAlignment="Left"
+                   Margin="5,0,0,0" 
+            />
+        </StackPanel>
+        <Grid Grid.Row="1"
+              Width="auto"
+              Height="auto"
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0"
+                  Width="auto"
+                  Height="auto"
+            >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Background="#640000" 
+                            CornerRadius="10" 
+                            Width="195" 
+                            Height="auto"
+                            VerticalAlignment="Top"
+                            Margin="0,20,7,0"
+                            Grid.Column="0"
+                            x:Name="StackPane_Pri5"
+                >
+                    <StackPanel Background="#780001" 
+                                Width="195"
+                                Height="200"
+                                CornerRadius="15" 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Margin="5"
+                                x:Name="StackPaneMenu5"
+                    >
+                        <StackPanel Height="auto" 
+                                    Width="auto" 
+                                    Margin="0, 10, 0, 0"
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Top" 
+                        >
+                            <Button Foreground="WhiteSmoke" 
+                                    x:Name="ButaoPageMenu" 
+                                    CornerRadius="10"
+                                    Width="140"
+                                    Margin="5"
+                                    Click="ButaoBack_Click" 
+                            >
+                                <StackPanel Orientation="Horizontal"
+                                            Height="auto"
+                                            Width="auto"
+                                >
+                                    <Image Source="/Assets/IconsMainPage/iconsCasa_48pix.png"
+                                           Height="15"
+                                           Width="15"
+                                           Margin="5,0,5,0"
+                                           HorizontalAlignment="Left"
+                                    />
+                                    <TextBlock Text="Menu Inical" 
+                                               FontSize="12"
+                                               Width="80"
+                                    />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Height="auto" 
+                                    Width="auto"
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Top"
+                        >
+                            <Button Foreground="WhiteSmoke" 
+                                    x:Name="ButaoSalvar" 
+                                    Command="{Binding SavePokemon, Mode=TwoWay}"
+                                    HorizontalAlignment="Center"
+                                    Width="140"
+                                    CornerRadius="10"
+                                    Margin="5"
+                            >
+                                <StackPanel Orientation="Horizontal"
+                                            Height="auto"
+                                            Width="auto"
+                                >
+                                    <Image Source="/Assets/IconsMainPage/IconPokebola_48pix.png"
+                                           MaxHeight="15"
+                                           MaxWidth="15"
+                                           Margin="5,0,5,0"
+                                           HorizontalAlignment="Left"
+                                    />
+                                    <TextBlock Text="Salvar Pokemon" 
+                                               FontSize="12"
+                                    />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Background="#640000" 
+                            CornerRadius="10" 
+                            Width="300" 
+                            Height="380"
+                            Margin="0,20,0,0"
+                            VerticalAlignment="top"
+                            HorizontalAlignment="Right"
+                            x:Name="StackPane_Pri4"
+                            Grid.Column="1"
+                >
+                    <StackPanel Background="#780001" 
+                                Width="295"
+                                Height="370"
+                                CornerRadius="15"
+                                Margin="5"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                x:Name="StackPaneMenu4"
+                    >
+                        <StackPanel Background="#640000" 
+                                    CornerRadius="10" 
+                                    Width="200" 
+                                    Height="200"
+                                    Margin="0,20,0,0"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    x:Name="StackPane_Pri6"
+                        >
+                            <Image Source="{Binding Image, Mode=TwoWay}"
+                                   Width="190"
+                                   Height="190"
+                                   Margin="5"
+                            />
+                        </StackPanel>
+                        <StackPanel Background="#640000" 
+                                    CornerRadius="10" 
+                                    Width="200" 
+                                    Height="80"
+                                    Margin="0,20,0,0"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Horizontal"
+                        >
+                            <TextBlock
+                                Text="{Binding OutPutTextImage}"
+                                Width="120"
+                                Foreground="WhiteSmoke"
+                                VerticalAlignment="Center"
+                                Margin="5"
+                            />
+                            <Button
+                                Command="{Binding LoadImage, Mode=TwoWay}"
+                                CornerRadius="10"
+                                Width="50"
+                                Height="50"
+                                Content="Load"
+                                Foreground="WhiteSmoke"
+                                Margin="5,0,0,0"
+                            />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="1"
+                  Width="auto"
+                  Height="auto"
+            >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid HorizontalAlignment="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Background="#640000" 
+                                CornerRadius="10" 
+                                Width="300" 
+                                Height="275"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Right"
+                                Margin="2,0,2,0"
+                                x:Name="StackPane_Pri"
+                                Grid.Column="0"
+                    >
+                        <StackPanel Background="#780001" 
+                                    Width="295"
+                                    Height="266"
+                                    CornerRadius="15" 
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="5"
+                                    x:Name="StackPaneMenu"
+                            
+                        >
+                            <StackPanel Background="#640000" 
+                                        CornerRadius="10" 
+                                        Width="150" 
+                                        Height="30"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        Margin="5"
+                            >
+                                <TextBlock Text="General"
+                                           Foreground="WhiteSmoke"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Margin="0,5,0,0"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto" 
+                                        Margin="0,10,0,0"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxId" 
+                                         Text="{Binding Id, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite o ID"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxName"
+                                         Text="{Binding Nome, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite o Nome"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxXP"
+                                         Text="{Binding XpBase, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite o XP Base"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxAltura" 
+                                         Text="{Binding Altura, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite a Altura"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxPeso"
+                                         Text="{Binding Peso, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite a Peso"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Background="#640000" 
+                                CornerRadius="10" 
+                                Width="300" 
+                                Height="275"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Left"
+                                Margin="2,0,2,0"
+                                Grid.Column="1"
+                                x:Name="StackPane_Pri2"
+                    >
+                        <StackPanel Background="#780001" 
+                                    Width="295"
+                                    Height="266"
+                                    CornerRadius="15" 
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="5"
+                                    x:Name="StackPaneMenu2"
+                        >
+                            <StackPanel Background="#640000" 
+                                        CornerRadius="10" 
+                                        Width="150" 
+                                        Height="30"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        Margin="5"
+                            >
+                                <TextBlock Text="Stats"
+                                           Foreground="WhiteSmoke"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Margin="0,5,0,0"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto" 
+                                        Margin="0,10,0,0"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxHP"
+                                         Text="{Binding Hp, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite o HP"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxAtaque" 
+                                         Text="{Binding Attack, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite o Ataque"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxDefesa"
+                                         Text="{Binding Defender, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite a Defesa"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxEA"
+                                         Text="{Binding SpecialAttack, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite o Especial Ataque"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxED"
+                                         Text="{Binding SpecialDefense, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite o Especial Defesa"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                            <StackPanel Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                            >
+                                <TextBox BorderBrush="AliceBlue"
+                                         x:Name="TextBoxVelocidade" 
+                                         Text="{Binding Speed, Mode=TwoWay}"
+                                         Opacity="0.5" 
+                                         RequestedTheme="Dark" 
+                                         BorderThickness="0,0,0,4"
+                                         Width="200"
+                                         Height="30"
+                                         CornerRadius="5"
+                                         PlaceholderText="Digite a Velocidade"
+                                         Margin="0, 0, 0, 5"
+                                />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Background="#640000" 
+                            CornerRadius="10" 
+                            Width="605" 
+                            Height="100"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left"
+                            Margin="2,3,0,0"
+                            Grid.Row="1"
+                            x:Name="StackPane_Pri3"
+                >
+                    <StackPanel Background="#780001" 
+                                Width="595"
+                                Height="90"
+                                CornerRadius="15" 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Margin="5"
+                                x:Name="StackPaneMenu3"
+                    >
+                        <StackPanel Background="#640000" 
+                                    CornerRadius="10" 
+                                    Width="150" 
+                                    Height="30"
+                                    VerticalAlignment="top"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,5,0,0"
+                        >
+                            <TextBlock Text="Type"
+                                       Foreground="WhiteSmoke"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="0,5,0,0"
+                            />
+                        </StackPanel>
+                        <StackPanel CornerRadius="10" 
+                                    Width="450" 
+                                    Height="40"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Margin="5"
+                        >
+                            <TextBox BorderBrush="AliceBlue"
+                                     Text="{Binding TipoOne, Mode=TwoWay}"
+                                     Opacity="0.5" 
+                                     RequestedTheme="Dark" 
+                                     BorderThickness="0,0,0,4"
+                                     Width="100"
+                                     Height="30"
+                                     CornerRadius="5"
+                                     PlaceholderText="Digite a Tipo1"
+                                     Margin="0,0,140,0"
+                            />
+                            <TextBox BorderBrush="AliceBlue"
+                                     Text="{Binding TipoTwo, Mode=TwoWay}"
+                                     Opacity="0.5" 
+                                     RequestedTheme="Dark" 
+                                     BorderThickness="0,0,0,4"
+                                     Width="100"
+                                     Height="30"
+                                     CornerRadius="5"
+                                     PlaceholderText="Digite a Tipo2"
+                                     Margin="70,0,0,0"
+                            />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
